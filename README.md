@@ -1,4 +1,4 @@
-# NusaPath — Your Journey to Authentic Indonesia 🇮🇩
+# NusaPath — Your Journey to Authentic Indonesia
 
 **NusaPath** is a concept landing page for a modern travel platform designed to connect travelers with authentic Indonesian experiences. This project demonstrates a responsive, high-performance user interface featuring an AI-powered itinerary generator simulation, destination showcases, and service integrations.
 
