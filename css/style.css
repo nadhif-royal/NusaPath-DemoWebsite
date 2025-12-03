@@ -1,5 +1,5 @@
 /* =========================================
-   NusaPath Design System - FINAL COMPLETE V7
+   NusaPath Design System - FINAL COMPLETE V9
    ========================================= */
 
 :root {
@@ -15,6 +15,7 @@
     --max-width: 1200px;
 }
 
+/* --- 1. RESET & BASE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; color: var(--text-dark); line-height: 1.6; background-color: var(--white); }
 
@@ -24,7 +25,7 @@ ul { list-style: none; }
 
 .container { width: 90%; max-width: var(--max-width); margin: 0 auto; }
 
-/* COMPONENTS */
+/* --- 2. COMPONENTS --- */
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: var(--radius-btn); font-weight: 600; cursor: pointer; transition: all 0.3s ease; gap: 8px; border: none; }
 .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 4px 15px rgba(13, 109, 255, 0.3); }
 .btn-primary:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
@@ -34,7 +35,7 @@ ul { list-style: none; }
 .btn-white { background: white; color: var(--text-dark); border: none; }
 .btn-white:hover { background: var(--bg-light); color: var(--primary); }
 
-/* HEADER */
+/* Header */
 #navbar { height: 80px; position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.05); }
 .nav-container { height: 100%; display: flex; align-items: center; justify-content: space-between; }
 .logo img { height: 48px; }
@@ -43,7 +44,7 @@ ul { list-style: none; }
 .mobile-menu-btn { display: none; background: none; border: none; font-size: 28px; color: var(--text-dark); }
 .mobile-menu { display: none; } 
 
-/* HERO */
+/* --- 3. HERO --- */
 #hero { padding: 60px 0 100px 0; background: linear-gradient(180deg, var(--bg-light) 0%, #FFFFFF 100%); overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .tagline-pill { background: rgba(13, 109, 255, 0.1); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; display: inline-block; margin-bottom: 16px; }
@@ -58,7 +59,7 @@ ul { list-style: none; }
 .trust-signals { margin-top: 32px; display: flex; gap: 20px; color: var(--text-grey); font-size: 0.9rem; flex-wrap: wrap; }
 .trust-signals i { color: var(--primary); font-size: 1.2rem; }
 
-/* VIDEO */
+/* --- 4. VIDEO --- */
 #experience { padding: 0 0 80px 0; background: #fff; }
 .video-frame { width: 100%; max-width: 1000px; margin: 0 auto; border-radius: 24px; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
 .video-frame video { width: 100%; display: block; }
@@ -66,7 +67,7 @@ ul { list-style: none; }
 .video-overlay h2 { color: white; font-size: 1.5rem; margin-bottom: 5px; }
 .video-overlay p { font-size: 0.9rem; margin: 0; color: #eee; }
 
-/* HOW IT WORKS */
+/* --- 5. HOW IT WORKS --- */
 #how-it-works { padding: 80px 0; background: var(--white); }
 .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 40px; }
 .step-card { background: var(--white); padding: 30px; border-radius: var(--radius-card); border: 1px solid #e2e8f0; text-align: center; transition: transform 0.3s; position: relative; z-index: 1; }
@@ -75,7 +76,7 @@ ul { list-style: none; }
 .step-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
 .step-card p { font-size: 0.95rem; color: var(--text-grey); }
 
-/* BENTO GRID */
+/* --- 6. BENTO GRID --- */
 #impact { padding: 80px 0; background: var(--bg-light); }
 .bento-grid { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 20px; margin-top: 40px; }
 .bento-item { background: white; padding: 30px; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: transform 0.3s; overflow: hidden; position: relative; }
@@ -91,7 +92,7 @@ ul { list-style: none; }
 .ecosystem li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; font-weight: 500; }
 .ecosystem i { margin: 0; font-size: 1.2rem; display: inline; }
 
-/* COLLECTIONS */
+/* --- 7. COLLECTIONS --- */
 #collections { padding: 80px 0; background: white; }
 .collections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
 .collection-card { position: relative; height: 350px; border-radius: 24px; overflow: hidden; cursor: pointer; }
@@ -101,7 +102,7 @@ ul { list-style: none; }
 .col-overlay h3 { color: white; font-size: 1.8rem; margin-bottom: 5px; }
 .col-overlay p { margin-bottom: 15px; opacity: 0.9; }
 
-/* SLIDER UTILITIES */
+/* --- SLIDER UTILITIES --- */
 .section-header { text-align: center; margin-bottom: 50px; }
 .section-header h2 { font-size: 3rem; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; color: #000; }
 .section-header p { font-size: 1.2rem; color: var(--text-grey); }
@@ -127,7 +128,7 @@ ul { list-style: none; }
 .user-profile img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
 .stars { color: #f1c40f; font-size: 0.9rem; }
 
-/* APP SHOWCASE */
+/* --- 8. APP SHOWCASE --- */
 #app-showcase { padding: 80px 0; background: var(--bg-light); }
 .app-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 40px; align-items: center; margin-top: 40px; }
 .mockup-img { width: 100%; max-height: 600px; object-fit: contain; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.1)); }
@@ -142,9 +143,8 @@ ul { list-style: none; }
 .feature-item p { font-size: 0.95rem; display: none; margin-top: 8px; color: var(--text-grey); }
 .feature-item.active p { display: block; animation: fadeIn 0.3s ease; }
 
-/* ITINERARY */
+/* --- 9. ITINERARY DEMO --- */
 .demo-section { padding: 80px 0; background: var(--white); }
-/* REVISI CSS BADGE: Agar bisa absolute di pojok */
 .demo-wrapper { position: relative; background: white; padding: 40px; border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); border: 1px solid #eee; max-width: 900px; margin: 0 auto; }
 .demo-badge { position: absolute; top: 20px; right: 20px; background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%); color: var(--primary); padding: 6px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(13, 109, 255, 0.1); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
 
@@ -163,7 +163,7 @@ ul { list-style: none; }
 .time-slot { font-size: 0.85rem; font-weight: 700; color: var(--primary); min-width: 60px; text-align: right; padding-top: 2px; }
 .activity-desc { font-size: 0.95rem; color: var(--text-dark); line-height: 1.4; }
 
-/* POSTER */
+/* --- 10. POSTER SECTION --- */
 #poster-section { padding: 60px 0; text-align: center; background: var(--bg-light); }
 .poster-container { position: relative; display: flex; align-items: center; justify-content: center; }
 .poster-wrapper { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 0; width: 100%; max-width: 1000px; margin: 0 auto; border-radius: 20px; }
@@ -173,10 +173,27 @@ ul { list-style: none; }
 .prev-btn.poster-nav { left: 10px; }
 .next-btn.poster-nav { right: 10px; }
 
-/* STORIES SECTION */
+/* --- 11. FOUNDERS TEAM (FLIP CARD NEW) --- */
+#team { padding: 80px 0; background: var(--white); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; perspective: 1000px; }
+.team-card-container { width: 100%; height: 450px; cursor: pointer; }
+.team-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 24px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+.team-card-container.flipped .team-card-inner { transform: rotateY(180deg); }
+.team-card-front, .team-card-back { position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 24px; overflow: hidden; }
+.team-card-front { background: #e3f2fd; color: var(--text-dark); display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.team-img-wrapper { width: 100%; height: 350px; display: flex; align-items: flex-end; justify-content: center; }
+.team-img { max-height: 100%; width: auto; max-width: 90%; object-fit: contain; object-position: bottom; }
+.team-info { padding: 20px; width: 100%; background: rgba(255,255,255,0.6); backdrop-filter: blur(5px); border-top: 1px solid rgba(0,0,0,0.05); }
+.team-info h4 { margin-bottom: 5px; font-size: 1.3rem; }
+.team-info .role { font-size: 0.95rem; color: var(--primary-dark); font-weight: 700; }
+.team-card-back { background: var(--primary); color: white; transform: rotateY(180deg); display: flex; align-items: center; justify-content: center; padding: 30px; }
+.back-content h4 { color: white; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700; }
+.back-content p { font-size: 1rem; line-height: 1.5; }
+
+/* --- 12. STORIES SECTION (FIX PROXIMITY) --- */
 #stories { padding: 100px 0 80px 0; background: var(--white); }
 
-/* FOOTER */
+/* --- 13. FOOTER --- */
 footer { background: #081020; padding: 60px 0 20px; color: #ffffff; }
 .footer-brand h4, .footer-links h5, .footer-newsletter h5 { color: #ffffff !important; font-weight: 700; margin-bottom: 16px; }
 .footer-brand p, .footer-newsletter p, .footer-links a, .copyright p { color: #cbd5e0; font-size: 0.95rem; }
@@ -189,18 +206,18 @@ footer { background: #081020; padding: 60px 0 20px; color: #ffffff; }
 /* ANIMATION */
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
 
-/* RESPONSIVE */
+/* --- 14. RESPONSIVE --- */
 @media (max-width: 768px) {
     h1 { font-size: 2.2rem; }
     .nav-links { display: none; }
     .mobile-menu-btn { display: block; }
-    .hero-grid, .app-grid, .footer-grid, .demo-form, .bento-grid, .collections-grid { grid-template-columns: 1fr; }
+    .hero-grid, .app-grid, .footer-grid, .demo-form, .bento-grid, .collections-grid, .team-grid { grid-template-columns: 1fr; }
     .app-grid { display: flex; flex-direction: column-reverse; }
     .main-value { grid-row: auto; }
     .scroll-card-sm, .scroll-card-md { flex: 0 0 85%; }
     .mobile-menu { position: fixed; top: 80px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: none; flex-direction: column; gap: 15px; }
     .mobile-menu.active { display: flex; }
     .copyright { flex-direction: column; gap: 16px; text-align: center; }
-    .section-header h2 { font-size: 2.2rem; }
+    .section-header h2 { font-size: 2rem; margin-top: 40px; line-height: 1.2; }
     .demo-badge { top: 10px; right: 10px; font-size: 0.75rem; padding: 4px 12px; }
 }
