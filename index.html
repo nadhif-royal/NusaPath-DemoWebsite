@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NusaPath — Your Journey to Authentic Indonesia</title>
     
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -27,7 +29,7 @@
                 <a href="#how-it-works">How it Works</a>
                 <a href="#impact">Why Us</a>
                 <a href="#destinations">Destinations</a>
-                <a href="#app-showcase">App</a>
+                <a href="#team">Founders</a>
                 <a href="#stories">Stories</a>
             </nav>
 
@@ -41,7 +43,7 @@
         <a href="#how-it-works">How it Works</a>
         <a href="#impact">Why Us</a>
         <a href="#destinations">Destinations</a>
-        <a href="#app-showcase">App</a>
+        <a href="#team">Founders</a>
         <a href="#stories">Stories</a>
     </div>
 
@@ -185,12 +187,12 @@
 
     <section id="destinations">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header auth-gems-header">
                 <h2>Explore Authentic Gems</h2>
                 <p>From the sunrise of Bromo to the dolphins of Lovina.</p>
                 <div class="slider-nav-center">
-                    <button class="nav-btn prev-btn" onclick="scrollContainer('dest-container', -320)"><i class="ph-bold ph-caret-left"></i></button>
-                    <button class="nav-btn next-btn" onclick="scrollContainer('dest-container', 320)"><i class="ph-bold ph-caret-right"></i></button>
+                    <button class="nav-btn prev-btn" onclick="scrollContainer('dest-container', -300)"><i class="ph-bold ph-caret-left"></i></button>
+                    <button class="nav-btn next-btn" onclick="scrollContainer('dest-container', 300)"><i class="ph-bold ph-caret-right"></i></button>
                 </div>
             </div>
             
@@ -369,6 +371,77 @@
         </div>
     </section>
 
+    <section id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet The Founders</h2>
+                <p>The visionaries behind NusaPath ("Trio Ngalam"). Click card to learn more.</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card-container" onclick="this.classList.toggle('flipped')">
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <div class="team-img-wrapper">
+                                <img src="assets/CEO_Nadhif.png" alt="Nadhif Rif'at R." class="team-img" onerror="this.src='https://placehold.co/300x400?text=Nadhif'">
+                            </div>
+                            <div class="team-info">
+                                <h4>Nadhif Rif'at R.</h4>
+                                <span class="role">Chief Executive Officer</span>
+                            </div>
+                        </div>
+                        <div class="team-card-back">
+                            <div class="back-content">
+                                <h4>Nadhif Rif'at Rasendriya (CEO)</h4>
+                                <p>Focuses on strategic vision, business development, and designing a sustainable ecosystem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card-container" onclick="this.classList.toggle('flipped')">
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <div class="team-img-wrapper">
+                                <img src="assets/CMO_Nada.png" alt="Nada Almira M." class="team-img" onerror="this.src='https://placehold.co/300x400?text=Nada'">
+                            </div>
+                            <div class="team-info">
+                                <h4>Nada Almira M.</h4>
+                                <span class="role">Chief Marketing Officer</span>
+                            </div>
+                        </div>
+                        <div class="team-card-back">
+                            <div class="back-content">
+                                <h4>Nada Almira Maulida (CMO)</h4>
+                                <p>Manages marketing strategy, brand identity, and creative collaborations with communities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card-container" onclick="this.classList.toggle('flipped')">
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <div class="team-img-wrapper">
+                                <img src="assets/CTO_Dyandra.png" alt="Dyandra Aurellia" class="team-img" onerror="this.src='https://placehold.co/300x400?text=Dyandra'">
+                            </div>
+                            <div class="team-info">
+                                <h4>Dyandra Aurellia</h4>
+                                <span class="role">Chief Technology Officer</span>
+                            </div>
+                        </div>
+                        <div class="team-card-back">
+                            <div class="back-content">
+                                <h4>Dyandra Aurellia Agata Fitri (CTO)</h4>
+                                <p>Fully responsible for product development, AI technology, and platform architecture.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="stories">
         <div class="container">
             <div class="section-header">
@@ -422,7 +495,7 @@
 
                 <div class="story-card scroll-card-md">
                     <div class="story-img">
-                        <img src="https://parto.id/asset/foto_produk/foto2.jpeg" alt="Lisa">
+                        <img src="https://parto.id/asset/foto_produk/foto2.jpeg" alt="Lisa" onerror="this.src='https://placehold.co/600x600?text=Lisa'">
                     </div>
                     <div class="story-content">
                         <p><em>"I love supporting local UMKM. NusaPath makes it easy to find authentic shops."</em></p>
@@ -480,6 +553,7 @@
         <div class="container copyright">
             <p>&copy; 2025 NusaPath. All rights reserved.</p>
             <div class="social-icons">
+                <a href="https://www.linkedin.com/company/nusapath/" target="_blank"><i class="ph-fill ph-linkedin-logo"></i></a>
                 <a href="https://www.instagram.com/nusa.path/" target="_blank"><i class="ph-fill ph-instagram-logo"></i></a>
                 <a href="https://www.youtube.com/@NusaPath" target="_blank"><i class="ph-fill ph-youtube-logo"></i></a>
                 <a href="mailto:nusapath1@gmail.com"><i class="ph-fill ph-envelope"></i></a>
