@@ -1,4 +1,4 @@
-/* FILE: js/main.js */
+/* FILE: js/main.js - FINAL UPDATED (Rich Database & More Frames) */
 
 // --- 1. GLOBAL HELPER FUNCTIONS ---
 window.scrollContainer = function(containerId, scrollAmount) {
@@ -18,7 +18,7 @@ window.switchFeature = function(element, featureId) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log("NusaPath JS Loaded.");
 
-    // A. Navbar
+    // A. Navbar Sticky
     const navbar = document.getElementById('navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
@@ -49,26 +49,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // C. Slideshow
+    // C. MOCKUP SLIDESHOW (UPDATED FRAMES)
     const sliderImg = document.getElementById('mockup-slider');
+    
+    // DAFTAR FRAME LENGKAP
     const frames = [
-        'assets/FrameSplashScreen.png', 'assets/FrameDashboard.png', 
-        'assets/FrameNusaTrip.png', 'assets/FrameTravelMate.png'
+        'assets/FrameSplashScreen.png', 
+        'assets/FrameSplashScreen2.png', // New
+        'assets/FrameDashboard.png', 
+        'assets/FrameNusaAI.png',        // New
+        'assets/FrameNusaAI2.png',       // New
+        'assets/FrameSmartItinerary.png',// New
+        'assets/FrameAboutItinerary.png',// New
+        'assets/FrameChatBot.png',       // New
+        'assets/FrameNusaTrip.png', 
+        'assets/FrameTravelMate.png',
+        'assets/FrameNusaSOS.png',       // New
+        'assets/FrameNusaPoints.png'     // New
     ];
+
     let currentFrameIndex = 0;
     if(sliderImg) {
         setInterval(() => {
-            sliderImg.classList.add('fade-out');
+            sliderImg.classList.add('fade-out'); // Efek fade out
             setTimeout(() => {
                 currentFrameIndex = (currentFrameIndex + 1) % frames.length;
                 sliderImg.src = frames[currentFrameIndex];
+                
+                // Hapus fade-out setelah gambar baru dimuat
                 sliderImg.onload = () => { sliderImg.classList.remove('fade-out'); };
+                // Fallback prevent stuck
                 setTimeout(() => sliderImg.classList.remove('fade-out'), 100);
             }, 500); 
-        }, 3500); 
+        }, 3000); // Ganti setiap 3 detik (dipercepat sedikit karena frame banyak)
     }
 
-    // D. Itinerary Generator
+    // D. Itinerary Generator Logic
     const demoForm = document.getElementById('itinerary-form');
     const resultDiv = document.getElementById('demo-result');
     const timelineContainer = document.getElementById('timeline-container');
@@ -112,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// --- 3. RICH DATABASE (BAHASA LUWES & DESKRIPTIF) ---
+// --- 3. DATABASE ITINERARY (RICH & DESCRIPTIVE) ---
 function generateSmartTimeline(location, days, budget) {
     const db = {
         'Bali': {
@@ -233,7 +249,7 @@ function generateSmartTimeline(location, days, budget) {
         },
         'East Java': {
             'Backpacker': [
-                [{t:"08:00", a:"Arrive Malang Station"}, {t:"13:00", a:"Check-in Colorful Hostel"}, {t:"19:00", a:"Explore Night Market"}],
+                [{t:"08:00", a:"Train to Malang Station"}, {t:"13:00", a:"Check-in Colorful Hostel"}, {t:"19:00", a:"Explore Night Market"}],
                 [{t:"00:00", a:"Shared Jeep to Bromo"}, {t:"12:00", a:"Nap Time"}, {t:"19:00", a:"Spicy Bakso"}],
                 [{t:"09:00", a:"Train to Banyuwangi"}, {t:"15:00", a:"Homestay Check-in"}, {t:"19:00", a:"Nasi Tempong Dinner"}],
                 [{t:"00:00", a:"Ijen Blue Fire Hike"}, {t:"08:00", a:"Rest"}, {t:"13:00", a:"Red Island Beach"}],
@@ -291,7 +307,7 @@ function generateSmartTimeline(location, days, budget) {
         },
         'West Java': {
             'Backpacker': [
-                [{t:"08:00", a:"Train to Bandung"}, {t:"12:00", a:"Batagor Riri"}, {t:"15:00", a:"Braga Walk"}],
+                [{t:"08:00", a:"Train to Bandung"}, {t:"12:00", a:"Batagor Riri"}, {t:"15:00", a:"Braga Street Walk"}],
                 [{t:"09:00", a:"Angkot Lembang"}, {t:"11:00", a:"Floating Market"}, {t:"14:00", a:"Farmhouse"}],
                 [{t:"07:00", a:"Kawah Putih Bus"}, {t:"12:00", a:"Nasi Liwet"}, {t:"15:00", a:"Deer Park"}],
                 [{t:"08:00", a:"Bus Pangandaran"}, {t:"14:00", a:"Homestay"}, {t:"17:00", a:"Sunset"}],
@@ -320,26 +336,21 @@ function generateSmartTimeline(location, days, budget) {
         }
     };
 
-    // Logic Pemilihan Data yang Kuat
     let scheduleHTML = '';
     
-    // 1. Ambil Data Lokasi (Fallback to Bali)
+    // 1. Get Location Data
     let locationData = db[location];
-    if (!locationData) {
-        locationData = db['Bali']; 
-    }
+    if (!locationData) locationData = db['Bali'];
 
-    // 2. Ambil Data Budget (Fallback to Comfort)
+    // 2. Get Budget Data
     let budgetData = locationData[budget];
-    if (!budgetData) {
-        budgetData = locationData['Comfort']; 
-    }
+    if (!budgetData) budgetData = locationData['Comfort'];
 
-    // 3. Loop Hari
+    // 3. Loop Days
     for(let i = 0; i < days; i++) {
         let dailyActs = budgetData[i];
         
-        // Fallback jika data hari kurang
+        // Fallback for missing days
         if (!dailyActs) {
             dailyActs = [
                 {t:"09:00", a:"Free Leisure Time / Shopping"}, 
