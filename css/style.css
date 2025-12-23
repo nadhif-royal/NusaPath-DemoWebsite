@@ -1,5 +1,5 @@
 /* =========================================
-   NusaPath Design System - FINAL COMPLETE V12 (Aesthetic & Parallax)
+   NusaPath Design System - FINAL COMPLETE V15 (Fixed Path)
    ========================================= */
 
 :root {
@@ -59,19 +59,9 @@ ul { list-style: none; }
 .trust-signals { margin-top: 32px; display: flex; gap: 20px; color: var(--text-grey); font-size: 0.9rem; flex-wrap: wrap; }
 .trust-signals i { color: var(--primary); font-size: 1.2rem; }
 
-/* --- 4. VIDEO (BACKGROUND UPDATE) --- */
-#experience { 
-    padding: 80px 0; 
-    /* Fresh Ocean Background */
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2000'); 
-    background-size: cover;
-    background-position: center;
-}
-.video-frame { 
-    width: 100%; max-width: 1000px; margin: 0 auto; 
-    border-radius: 24px; overflow: hidden; position: relative; 
-    box-shadow: 0 30px 60px rgba(0,0,0,0.3); /* Shadow diperkuat agar pop */
-}
+/* --- 4. VIDEO --- */
+#experience { padding: 0 0 80px 0; background: #fff; }
+.video-frame { width: 100%; max-width: 1000px; margin: 0 auto; border-radius: 24px; overflow: hidden; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
 .video-frame video { width: 100%; display: block; }
 .video-overlay { position: absolute; top: 20px; left: 20px; z-index: 10; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px); padding: 15px 25px; border-radius: 16px; color: white; }
 .video-overlay h2 { color: white; font-size: 1.5rem; margin-bottom: 5px; }
@@ -202,17 +192,17 @@ ul { list-style: none; }
 .back-content h4 { color: white; font-size: 1.2rem; margin-bottom: 15px; font-weight: 700; }
 .back-content p { font-size: 1rem; line-height: 1.5; }
 
-/* --- 12. STORIES SECTION (AESTHETIC NUSA PENIDA BACKGROUND) --- */
+/* --- 12. STORIES SECTION (FIX BACKGROUND LOCAL FILE) --- */
 #stories { 
     padding: 100px 0 80px 0; 
-    /* Background Nusa Penida (Kelingking Beach) - Aesthetic & Fresh */
-    background: linear-gradient(rgba(0, 10, 30, 0.3), rgba(0, 10, 30, 0.3)), url('https://balisuta.com/images/uploads/article-images/nusa_penida_32_balisuta-480.webp');
+    /* PATH FIXED: Keluar dari folder CSS (../) lalu masuk ke assets */
+    background: linear-gradient(rgba(0, 10, 30, 0.4), rgba(0, 10, 30, 0.4)), url('../assets/NusaPenida.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Parallax Effect */
+    background-attachment: fixed; /* Efek Parallax */
 }
 
-/* Override Text Color for Stories Section to White */
+/* Teks Header jadi Putih agar terbaca di atas background alam */
 #stories .section-header h2 { 
     color: #ffffff; 
     text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
@@ -222,7 +212,7 @@ ul { list-style: none; }
     text-shadow: 0 1px 5px rgba(0,0,0,0.5); 
 }
 
-/* Tombol Navigasi Slider agar terlihat jelas di atas background */
+/* Tombol Navigasi Slider */
 #stories .nav-btn { 
     background: rgba(255, 255, 255, 0.9); 
     border: none; 
